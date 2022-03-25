@@ -1,0 +1,33 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \fill[color=nkostincolor] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+        \fill[color=red] (0,0) rectangle (2.95,1.9);
+        \fill[color=ivory] (3.05,0) rectangle (\the\paperwidth,1.9);
+        \ifnum\thepage>1\relax
+        \fill[white, opacity=1] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \fi
+    \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{jupiter}[1][]
+{
+    \vskip 0cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=0cm, sep=8pt, #1]{title page header}
+        \usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+    \vskip 5.50cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=1cm, #1]{author}
+        \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vskip 0.2cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=1cm, #1]{date}
+        \usebeamerfont{author}\insertdate
+    \end{beamercolorbox}
+    \vfill
+}
+
+\mode<all>
