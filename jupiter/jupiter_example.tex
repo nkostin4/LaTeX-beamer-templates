@@ -3,28 +3,170 @@
 \usepackage[T1]{fontenc}
 
 \usetheme{jupiter}
+\usefonttheme{serif} % comment for san-serif font
+
+% Put the Table of Contents at the beginning
+% of each section and highlight the title
+% of the current section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 
 \input{../preambleb}
 
-\title{There is No Largest Prime Number}
-\subtitle{Subtitle}
+\title{A Brief Introduction to the Beamer Class}
+\subtitle{A Primer}
 
 \author{Nicholas D. Kostin}
-\date{24 February 2022}
+\date{26 March 2022}
 
 \begin{document}
 
 \frame{\titlepage}
 
 \begin{frame}
-    \frametitle{Introduction}
-    \framesubtitle{Here is a subtitle.}
-    Frame contents.
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{First Section}
+
+\begin{frame}
+\frametitle{First Frame Title}
+\framesubtitle{Subtitle pertaining to the first frame.}
+
+Frame contents.
+
 \end{frame}
 
 \begin{frame}
-    \frametitle{Middle}
-    Frame contents.
+\frametitle{Second Frame Title}
+\framesubtitle{Subtitle pertaining to the second frame.}
+
+Some important text will be \alert{highlighted} because it's important.
+
+\begin{block}{Blue Box}
+    Sample text in the blue box.
+\end{block}
+
+\begin{alertblock}{Red Box}
+    Sample text in the red box.
+\end{alertblock}
+
+\begin{examples}
+Sample text in green box. The title of the block is ``Examples''.
+\end{examples}
+
+\end{frame}
+
+\section{Second Section}
+
+\begin{frame}
+\frametitle{Third Frame Title}
+\framesubtitle{Subtitle pertaining to the third frame.}
+
+This frame contains a figure.
+
+\begin{figure}[H]
+\centering
+\captionsetup{width=0.8\textwidth,labelfont={color=black,bf},textfont={color=black}}
+\begin{tikzpicture}[scale=0.4]
+    % primary colors
+    \fill[blue] (30:2.4) circle (4);
+    \fill[red] (150:2.4) circle (4);
+    \fill[lime] (270:2.4) circle (4);
+    % secondary colors
+    \begin{scope} % red + blue = purple
+        \clip (150:2.4) circle (4);
+        \fill[magenta] (30:2.4) circle (4);
+    \end{scope}
+    \begin{scope} % red + green = yellow
+        \clip (270:2.4) circle (4);
+        \fill[yellow] (150:2.4) circle (4);
+    \end{scope}
+    \begin{scope} green + blue = teal
+        \clip (30:2.4) circle (4);
+        \fill[cyan] (270:2.4) circle (4);
+    \end{scope}
+    % red + blue + green = white
+    \begin{scope}
+        \clip (30:2.4) circle (4);
+        \clip (150:2.4) circle (4);
+        \fill[white] (270:2.4) circle (4);
+    \end{scope}
+\end{tikzpicture}
+\caption{A primitive color wheel.}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fourth Frame Title}
+\framesubtitle{Subtitle pertaining to the fourth frame.}
+
+This frame also contains a figure.
+
+\begin{figure}[H]
+\centering
+\captionsetup{width=0.8\textwidth,labelfont={color=black,bf},textfont={color=black}}
+\begin{tikzpicture}[scale=0.4]
+    % primary colors
+    \fill[blue] (30:2.4) circle (4);
+    \fill[red] (150:2.4) circle (4);
+    \fill[lime] (270:2.4) circle (4);
+    % secondary colors
+    \begin{scope} % red + blue = purple
+        \clip (150:2.4) circle (4);
+        \fill[magenta] (30:2.4) circle (4);
+    \end{scope}
+    \begin{scope} % red + green = yellow
+        \clip (270:2.4) circle (4);
+        \fill[yellow] (150:2.4) circle (4);
+    \end{scope}
+    \begin{scope} green + blue = teal
+        \clip (30:2.4) circle (4);
+        \fill[cyan] (270:2.4) circle (4);
+    \end{scope}
+    % red + blue + green = white
+    \begin{scope}
+        \clip (30:2.4) circle (4);
+        \clip (150:2.4) circle (4);
+        \fill[white] (270:2.4) circle (4);
+    \end{scope}
+\end{tikzpicture}
+\caption{Another primitive color wheel.}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fifth Frame Title}
+\framesubtitle{Subtitle pertaining to the fifth frame.}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+Here is some text in the first column. A famous equation is written below.
+
+\begin{equation*}
+    \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \psi - \nabla^2 \psi + \frac{m^2 c^2}{\hbar^2} \psi = 0.
+\end{equation*}
+
+\column{0.5\textwidth}
+This text will be in the second column.
+
+\begin{itemize}
+    \item[$\bullet$] First list item
+    \item[$\bullet$] Second list item
+    \item[$\bullet$] Third list item
+\end{itemize}
+
+\end{columns}
+
 \end{frame}
 
 \end{document}
