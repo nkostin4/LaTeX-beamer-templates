@@ -1,0 +1,44 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{zeta}[1][]
+{%
+\vskip 0.2cm
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1.0cm]{frametitle}
+    \begin{tikzpicture}
+    \useasboundingbox[fill=white] (0,0) rectangle (\the\paperwidth,0.8);
+    % \fill[red] (0,0) rectangle (\the\paperwidth,0.8);
+    \ifx\insertframesubtitle\@empty
+        {%
+        \node[nkostincolor,font=\large] at (\the\paperwidth/2,0.4) {\insertframetitle};
+        }
+    \else
+        {%
+        \node[nkostincolor,font=\large] at (\the\paperwidth/2,0.6) {\insertframetitle};
+        \node[nkostincolor,font=\small] at (\the\paperwidth/2,0.2) {\insertframesubtitle};
+        }
+    \fi
+    \end{tikzpicture}
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{zeta}
+{%
+    \ifnum \insertpagenumber=1
+        \vskip 0pt
+    \else
+        \leavevmode
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+        % \usebeamerfont{title in head/foot}\insertshorttitle
+        \begin{tikzpicture}
+        \useasboundingbox[fill=white](0,0) rectangle (\the\paperwidth,0.8);
+            \fill[nkostincolor] (0,0) rectangle (\the\paperwidth,0.8);
+            \node[white,anchor=east,scale=1.4] at (\the\paperwidth*0.95,0.4) {\texttt{https://nkostin.com}};
+            \node[white] at (\the\paperwidth*0.98,0.2) {\insertpagenumber};
+        \end{tikzpicture}
+        \end{beamercolorbox}
+        \vskip 0pt
+    \fi
+}
+
+\mode<all>
