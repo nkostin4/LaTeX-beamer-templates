@@ -1,0 +1,150 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usetheme{mines}
+% \usefonttheme{serif} % comment for san-serif font lmao
+
+% Put the Table of Contents at the beginning
+% of each section and highlight the title
+% of the current section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\input{preamble}
+
+\title{Brief Introduction to the Beamer Class}
+\subtitle{A Primer on Making Awesome Presentations}
+
+\author{Nicholas D. Kostin}
+\date{03 April 2022}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{First Section}
+
+\begin{frame}
+\frametitle{First Frame Title}
+\framesubtitle{Subtitle pertaining to the first frame.}
+
+Frame contents.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Second Frame Title}
+\framesubtitle{Subtitle pertaining to the second frame.}
+
+Some important text will be \alert{highlighted} because it's important.
+
+\vfill
+
+\begin{block}{Block Box}
+    The text contained inside this block serves some purpose.
+\end{block}
+
+\end{frame}
+
+\section{Second Section}
+
+\begin{frame}
+\frametitle{Third Frame Title}
+\framesubtitle{Subtitle pertaining to the third frame.}
+
+This frame contains a figure.
+
+\begin{figure}[H]
+\centering
+\captionsetup{width=0.8\textwidth,labelfont={color=black,bf},textfont={color=black}}
+    \includegraphics[height=0.5\textheight]{funny.png}
+\caption{A funny picture.}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fourth Frame Title}
+\framesubtitle{Subtitle pertaining to the fourth frame.}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+
+The Dirac delta can be loosely thought of a function on the real line which is zero everywhere except at the origin, where it is infinite:
+\begin{equation}
+    \delta (x) = \begin{cases} +\infty, &x = 0 \\ 0, &x \neq 0, \end{cases}
+\end{equation}
+
+and which is also constrained to satisfy the identity
+\begin{equation}
+    \int\limits_{\bbR} \delta (x)\ dx = 1.
+\end{equation}
+
+\column{0.5\textwidth}
+
+\begin{figure}[H]
+\centering
+\captionsetup{width=0.8\textwidth,labelfont={color=black,bf},textfont={color=black}}
+    \includegraphics[height=0.6\textheight]{cute.jpg}
+\caption{A cute picture.}
+\end{figure}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fifth Frame Title}
+\framesubtitle{Subtitle pertaining to the fifth frame.}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+Here is some text in the first column. A famous equation is written below.
+
+\begin{equation*}
+    \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \psi - \nabla^2 \psi + \frac{m^2 c^2}{\hbar^2} \psi = 0.
+\end{equation*}
+
+\column{0.5\textwidth}
+This text will be in the second column.
+
+\begin{itemize}
+    \item[$\bullet$] First list item
+    \item[$\bullet$] Second list item
+    \item[$\bullet$] Third list item
+\end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Sixth Frame Title}
+\framesubtitle{Subtitle pertaining to the sixth frame.}
+
+Consider some $A \in \bbR^{p \times q}$ and $B \in \bbR^{q \times p}$. We can represent these matrices as
+\begin{equation*}
+    A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1q} \\ a_{21} & a_{22} & \cdots & a_{2q} \\ \vdots & \vdots & \ddots & \vdots \\ a_{p1} & a_{p2} & \cdots & a_{pq} \end{pmatrix} \qquad \text{and} \qquad B = \begin{pmatrix} b_{11} & b_{12} & \cdots & b_{1p} \\ b_{21} & a_{22} & \cdots & b_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ b_{q1} & b_{q2} & \cdots & b_{qp} \end{pmatrix}
+\end{equation*}
+
+respectively. Then the product $AB$ can be written
+\begin{equation*}
+    AB = \begin{pmatrix} a_{11} b_{11} + \cdots + a_{1q} b_{q1} & a_{11} b_{12} + \cdots + a_{1q} b_{q2} & \cdots & a_{11} b_{1p} + \cdots + a_{1q} b_{qp} \\ a_{21} b_{11} + \cdots + a_{2q} b_{q1} & a_{21} b_{12} + \cdots + a_{2q} b_{q2} & \cdots & a_{21} b_{1p} + \cdots + a_{2q} b_{qp} \\ \vdots & \vdots & \ddots & \vdots \\ a_{p1} b_{11} + \cdots + a_{pq} b_{q1} & a_{p1} b_{12} + \cdots + a_{pq} b_{q2} & \cdots & a_{p1} b_{1p} + \cdots + a_{pq} b_{qp} \end{pmatrix}.
+\end{equation*}
+
+\end{frame}
+
+\end{document}

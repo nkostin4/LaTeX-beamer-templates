@@ -1,0 +1,38 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{%
+    \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+        \fill[color=minesblue] (0,0.8) rectangle (\the\paperwidth,\the\paperheight);
+        \node[anchor=west] at (0.2,0.45) {\includegraphics[scale=0.55]{mines-logo/physics-light.png}};
+        \node at (\the\paperwidth/1.26,4.8) {\includegraphics[scale=0.40]{mines-logo/reuleaux_transparent.png}};
+        \filldraw [color=minesorange, fill=minesorange] (\the\paperwidth/10,4.8) rectangle (\the\paperwidth/2,4.84);
+        \ifnum\thepage>1\relax
+        \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+        \fi
+    \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{mines}[1][]
+{%
+    \vskip 0cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=0cm, sep=8pt, #1]{title page header}
+        \usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+    \vskip 0.2 cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=0cm, sep=8pt, #1]{subtitle page header}
+        \usebeamerfont{subtitle}\insertsubtitle
+    \end{beamercolorbox}
+    \vskip 3.00cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=0.5cm, #1]{author}
+        \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vskip 0.4cm
+    \begin{beamercolorbox}[wd=12cm, leftskip=0.5cm, #1]{date}
+        \usebeamerfont{author}\insertdate
+    \end{beamercolorbox}
+    \vfill
+}
+
+\mode<all>
