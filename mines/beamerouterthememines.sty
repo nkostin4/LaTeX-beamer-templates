@@ -4,18 +4,18 @@
 \defbeamertemplate*{frametitle}{mines}[1][]
 {%
 \vskip 0.2cm
-    \begin{beamercolorbox}[wd=\paperwidth, ht=1.0cm]{frametitle}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1.0cm]{frametitle}
     \begin{tikzpicture}
     \useasboundingbox[fill=white] (0,0) rectangle (\the\paperwidth,0.8);
     % \fill[minesorange] (0,0) rectangle (\the\paperwidth,0.8);
     \ifx\insertframesubtitle\@empty
         {%
-        \node[minesblue, font=\large] at (\the\paperwidth/2, 0.4) {\insertframetitle};
+        \node[minesblue,font=\large] at (\the\paperwidth/2,0.4) {\insertframetitle};
         }
     \else
         {%
-        \node[minesblue, font=\large] at (\the\paperwidth/2, 0.6) {\insertframetitle};
-        \node[minesblue, font=\small] at (\the\paperwidth/2, 0.2) {\insertframesubtitle};
+        \node[minesblue,font=\large] at (\the\paperwidth/2,0.6) {\insertframetitle};
+        \node[minesblue,font=\small] at (\the\paperwidth/2,0.2) {\insertframesubtitle};
         }
     \fi
     \end{tikzpicture}
@@ -31,14 +31,14 @@
         \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
         % \usebeamerfont{title in head/foot}\insertshorttitle
         \begin{tikzpicture}
-        \useasboundingbox[fill=white](0,0) rectangle (\the\paperwidth, 0.8);
-            \fill[minesblue] (0,0) rectangle (\the\paperwidth, 0.8);
+        \useasboundingbox[fill=white](0,0) rectangle (\the\paperwidth,0.8);
+            \fill[minesblue] (0,0) rectangle (\the\paperwidth,0.8);
             \node[anchor=east, scale=1.4] at (\the\paperwidth*0.95,0.4) {\textcolor{white}{PHYSICS}\textcolor{minesorange}{.}\textcolor{white}{MINES}\textcolor{minesorange}{.}\textcolor{edu}{EDU}};
             \node[white] at (\the\paperwidth*0.98,0.2) {\insertpagenumber};
             \node[anchor=west] at (0.2,0.45) {\includegraphics[scale=0.20]{mines-logo/physics-dark.png}};
         \end{tikzpicture}
         \end{beamercolorbox}
-        \vskip0pt
+        \vskip 0pt
     \fi
 }
 
