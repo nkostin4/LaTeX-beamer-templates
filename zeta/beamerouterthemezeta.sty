@@ -10,12 +10,12 @@
     % \fill[red] (0,0) rectangle (\the\paperwidth,0.8);
     \ifx\insertframesubtitle\@empty
         {%
-        \node[nkostincolor,font=\large] at (\the\paperwidth/2,0.4) {\insertframetitle};
+        \node[midnightblue,font=\large] at (\the\paperwidth/2,0.4) {\insertframetitle};
         }
     \else
         {%
-        \node[nkostincolor,font=\large] at (\the\paperwidth/2,0.6) {\insertframetitle};
-        \node[nkostincolor,font=\small] at (\the\paperwidth/2,0.2) {\insertframesubtitle};
+        \node[midnightblue,font=\large] at (\the\paperwidth/2,0.6) {\insertframetitle};
+        \node[midnightblue,font=\small] at (\the\paperwidth/2,0.2) {\insertframesubtitle};
         }
     \fi
     \end{tikzpicture}
@@ -32,7 +32,7 @@
         % \usebeamerfont{title in head/foot}\insertshorttitle
         \begin{tikzpicture}
         \useasboundingbox[fill=white](0,0) rectangle (\the\paperwidth,0.8);
-            \fill[nkostincolor] (0,0) rectangle (\the\paperwidth,0.8);
+            \fill[midnightblue] (0,0) rectangle (\the\paperwidth,0.8);
             \node[white,anchor=west,scale=1.5] at (\the\paperwidth*0.02,0.4) {\inserttitle};
             \node[white,anchor=east,scale=1.5] at (\the\paperwidth*0.95,0.4) {\texttt{https://nkostin.com}};
             \node[white] at (\the\paperwidth*0.98,0.2) {\insertpagenumber};
